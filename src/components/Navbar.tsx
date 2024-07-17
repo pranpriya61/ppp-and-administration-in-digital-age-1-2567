@@ -29,7 +29,7 @@ export default function Navbar() {
                 <a href="/aecranking">AEC Ranking</a>
               </li>
               <li className="text-stone-600 hover:text-blue-600 hover:font-bold font-medium mx-4 my-1">
-                <a href="#">chatGPT</a>
+                <a href="/chatgpt">chatGPT</a>
               </li>
               <li className="text-stone-600 hover:text-blue-600 hover:font-bold font-medium mx-4 my-1">
                 <a href="#">การประเมินนโยบายสาธารณะ</a>
