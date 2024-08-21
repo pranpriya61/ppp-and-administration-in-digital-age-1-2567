@@ -141,7 +141,7 @@ export default function AddProduct() {
                 value={email}
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="text"
-                placeholder="Product Category"
+                placeholder="อีเมล"
               />
             </div>
           </div>
@@ -158,7 +158,7 @@ export default function AddProduct() {
                 value={mobile}
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="number"
-                placeholder="Mobile"
+                placeholder="โทรศัพท์"
               />
             </div>
           </div>
@@ -208,7 +208,7 @@ export default function AddProduct() {
                 onChange={(e) => setEvaluation(e.target.value)}
                 value={evaluation}
                 className="input input-bordered input-accent w-full max-w-xs"
-                type="number"
+                type="float"
                 placeholder="ผลประเมิน"
               />
             </div>
