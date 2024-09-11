@@ -1,4 +1,5 @@
 //models\ProductModel.js
+// import mongoose, { Schema } from "mongoose";
 import mongoose, { Schema } from "mongoose";
 
 const topicSchema = new Schema(
@@ -15,8 +16,6 @@ const topicSchema = new Schema(
     strength: { type: String, required: true },
     development: { type: String, required: true },
     suggestion: { type: String, required: true },
-
-   
   },
   {
     timestamps: true,

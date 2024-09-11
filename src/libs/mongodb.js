@@ -1,5 +1,6 @@
 //libs\mongodb.js
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
+import mongoose from "mongoose"
 
 const connectMongoDB = async () => {
   try {

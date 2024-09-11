@@ -15,14 +15,13 @@ export async function PUT(request, { params }) {
     newYear: year,
     newEvaluation: evaluation,
     newWeak: weak,
-    newStrengh: strengh,
+    newStrength: strength,
     newDevelopment: development,
     newSuggestion: suggestion,
   } = await request.json();
   await connectMongoDB();
   await Product.findByIdAndUpdate(id, {
     name,
-    image,
     project,
     implementation,
     email,
@@ -31,7 +30,7 @@ export async function PUT(request, { params }) {
     year,
     evaluation,
     weak,
-    strengh,
+    strength,
     development,
     suggestion,
   });

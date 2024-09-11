@@ -12,9 +12,9 @@ export default function AddProduct() {
   const [mobile, setMobile] = useState("");
   const [budget, setBudget] = useState("");
   const [year, setYear] = useState("");
-  const [evaluation, Evaluation] = useState("");
+  const [evaluation, setEvaluation] = useState("");
   const [weak, setWeak] = useState("");
-  const [strengh, setStrengh] = useState("");
+  const [strength, setStrength] = useState("");
   const [development, setDevelopment] = useState("");
   const [suggestion, setSuggestion] = useState("");
 
@@ -24,7 +24,7 @@ export default function AddProduct() {
     e.preventDefault();
 
     if (!name || !project) {
-      alert("Name and image are required.");
+      alert("Name and project are required.");
       return;
     }
 
@@ -36,7 +36,6 @@ export default function AddProduct() {
         },
         body: JSON.stringify({
           name,
-          image,
           project,
           implementation,
           email,
@@ -45,7 +44,7 @@ export default function AddProduct() {
           year,
           evaluation,
           weak,
-          strengh,
+          strength,
           development,
           suggestion,
         }),
@@ -78,11 +77,11 @@ export default function AddProduct() {
             </label>
             <div className="mt-2">
               <input
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-                className="input input-bordered input-accent w-full max-w-xs"
-                type="text"
-                placeholder="Product Name"
+                // onChange={(e) => setName(e.target.value)}
+                // value={name}
+                // className="input-borinput dered input-accent w-full max-w-xs"
+                // type="text"
+                // placeholder="ยุทธศาสตร์ชาติ"
               />
               {/* <input
         type="text"
@@ -91,6 +90,39 @@ export default function AddProduct() {
         autoComplete="given-name"
         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
       /> */}
+            </div>
+            <div className="mt-2">
+              <select
+                className="input-borinput dered input-accent w-full max-w-xs"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                type="text"
+                placeholder="ยุทธศาสตร์ชาติ"
+              >
+                <option disabled selected>
+                  ดัชนีแผนแม่บทด้านความมั่นคง
+                </option>
+                <option>ดัชนีสันติภาพโลก</option>
+                <option>ดัชนีความสุขโลก</option>
+                <option>ดัชนีสิทธิมนุษยชนและหลักนิติธรรม</option>
+                <option>ดัชนีสถาบันหลัก</option>
+                <option>ดัชนีเสรีภาพทางการเมือง</option>
+                <option>ดัชนีมีสิทธิมีเสียงของประชาชนและการรับผิดชอบ</option>
+                <option>ดัชนีปลอดภัยจากภัยคุกคาม</option>
+                <option>ดัชนีความสงบสุขภาคใต้</option>
+                <option>
+                  ดัชนีประสิทธิภาพของหน่วยงานด้านการข่าวและประชาคมข่าวกรอง
+                </option>
+                <option>ดัชนีความแข็งแกร่งทางกำลังทหาร</option>
+                <option>ดัชนีรัฐเปราะบาง</option>
+                <option>
+                  ดัชนีจำนวนเป้าหมายย่อยของเป้าหมายการพัฒนาที่ยั่งยืนในเป้าหมายที่
+                  17 บรรลุตามที่กำหนด
+                </option>
+                <option>
+                  ดัชนีระดับประสิทธิภาพการดำเนินงานของหน่วยงานด้านการจัดการความมั่นคง
+                </option>
+              </select>
             </div>
           </div>
           <div className="sm:col-span-3">
@@ -106,8 +138,8 @@ export default function AddProduct() {
                 value={project}
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="text"
-                placeholder="/images/1.jpg"
-                defaultValue="/images/1.jpg"
+                placeholder="โครงการ"
+                // defaultValue="/images/1.jpg"
               />
             </div>
           </div>
@@ -221,7 +253,7 @@ export default function AddProduct() {
               จุดอ่อน
             </label>
             <div className="mt-2">
-              <input
+              <textarea
                 onChange={(e) => setWeak(e.target.value)}
                 value={weak}
                 className="input input-bordered input-accent w-full max-w-xs"
@@ -238,9 +270,9 @@ export default function AddProduct() {
               จุดแข็ง
             </label>
             <div className="mt-2">
-              <input
-                onChange={(e) => setStrengh(e.target.value)}
-                value={strengh}
+              <textarea
+                onChange={(e) => setStrength(e.target.value)}
+                value={strength}
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="text"
                 placeholder="จุดแข็ง"
@@ -255,7 +287,7 @@ export default function AddProduct() {
               แนวทางเสริม (จุดแข็ง)
             </label>
             <div className="mt-2">
-              <input
+              <textarea
                 onChange={(e) => setDevelopment(e.target.value)}
                 value={development}
                 className="input input-bordered input-accent w-full max-w-xs"
@@ -289,7 +321,7 @@ export default function AddProduct() {
               ข้อเสนอแนะ
             </label>
             <div className="mt-2">
-              <input
+              <textarea
                 onChange={(e) => setSuggestion(e.target.value)}
                 value={suggestion}
                 className="input input-bordered input-accent w-full max-w-xs"

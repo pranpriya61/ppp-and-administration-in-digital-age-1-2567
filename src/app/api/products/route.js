@@ -1,5 +1,7 @@
 //app\api\products\route.js
+// import connectMongoDB from "@/libs/mongodb";
 import connectMongoDB from "@/libs/mongodb";
+// import Product from "@/models/ProductModel";
 import Product from "@/models/ProductModel";
 import { NextResponse } from "next/server";
 
@@ -12,7 +14,6 @@ export async function GET() {
 export async function POST(request) {
   const {
     name,
-    image,
     project,
     implementation,
     email,
@@ -21,14 +22,13 @@ export async function POST(request) {
     year,
     evaluation,
     weak,
-    strengh,
+    strength,
     development,
     suggestion,
   } = await request.json();
   await connectMongoDB();
-  await Product.create({ 
+  await Product.create({
     name,
-    image,
     project,
     implementation,
     email,
@@ -37,11 +37,10 @@ export async function POST(request) {
     year,
     evaluation,
     weak,
-    strengh,
+    strength,
     development,
     suggestion,
   });
- });
   return NextResponse.json({ message: "Product Created" }, { status: 201 });
 }
 
