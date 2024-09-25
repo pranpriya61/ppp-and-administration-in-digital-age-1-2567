@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
+import Button from "@mui/material/Button";
 export default function AddProduct() {
   const [name, setName] = useState("");
   const [project, setProject] = useState("");
@@ -63,8 +63,15 @@ export default function AddProduct() {
 
   return (
     <>
-      <div className="flex justify-between items-center ml-24">
-        <h1 className="font-bold py-10 text-2xl">Add New Product</h1>
+      <div className="flex justify-center items-center">
+        <Button
+          variant="contained"
+          color="success"
+          className="text-xl font-bold px-28 py-3"
+          size="large"
+        >
+          เพิ่มรายการใหม่
+        </Button>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-10 ml-24">
@@ -76,24 +83,8 @@ export default function AddProduct() {
               ยุทธศาสตร์ชาติ
             </label>
             <div className="mt-2">
-              <input
-                // onChange={(e) => setName(e.target.value)}
-                // value={name}
-                // className="input-borinput dered input-accent w-full max-w-xs"
-                // type="text"
-                // placeholder="ยุทธศาสตร์ชาติ"
-              />
-              {/* <input
-        type="text"
-        name="first-name"
-        id="first-name"
-        autoComplete="given-name"
-        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-      /> */}
-            </div>
-            <div className="mt-2">
               <select
-                className="input-borinput dered input-accent w-full max-w-xs"
+                className="input input-bordered input-accent w-full max-w-xs"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 type="text"
@@ -333,12 +324,21 @@ export default function AddProduct() {
         </div>
 
         <div className="flex justify-center items-center mt-10">
-          <button
+          {/* <button
             type="submit"
             className="btn btn-primary w-full max-w-xs ml-24"
           >
             Add Product
-          </button>
+          </button> */}
+          <Button
+            type="submit"
+            variant="contained"
+            color="success"
+            className="font-bold px-24 py-3"
+            size="large"
+          >
+            เพิ่มรายการ
+          </Button>
         </div>
       </form>
     </>

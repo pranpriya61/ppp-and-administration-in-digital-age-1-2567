@@ -1,4 +1,7 @@
 //components\EditProductForm.jsx
+import * as React from "react";
+import Button from "@mui/material/Button";
+import EditIcon from "@mui/icons-material/Edit";
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import Image from "next/image";
@@ -31,18 +34,26 @@ export default async function ProductsList() {
           </h1>
         </div>
         <div className="text-left ml-16">
-          <Link className="btn btn-primary" href={"/addProduct"}>
-            Add Product
+          <Link href={"/addProduct"}>
+            <Button
+              variant="contained"
+              color="success"
+              className="font-bold px-10"
+              size="large"
+            >
+              เพิ่มรายการ
+            </Button>
           </Link>
         </div>
         <table className="table">
           <thead>
             <tr>
-              <th>
+              {/* <th>
                 <label>
                   <input type="checkbox" className="checkbox" />
                 </label>
-              </th>
+              </th> */}
+              <th>#</th>
               <th>ยุทธศาสตร์ชาติ</th>
               <th>โครงการ</th>
               <th>หน่วยงานที่นำนโยบายไปปฏิบัติ</th>
@@ -55,16 +66,21 @@ export default async function ProductsList() {
               <th>จุดแข็ง</th>
               <th>แนวทางเสริมจุดแข็ง</th>
               <th>ข้อเสนอแนะ</th>
-              <th>Edit & Delete</th>
+              <th>
+                <div className="flex justify-center items-center font-bold">
+                  Edit & Delete
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
-            {products.map((element) => (
+            {products.map((element,index) => (
               <tr className="hover" key={element._id}>
                 <th>
-                  <label>
+                  {/* <label>
                     <input type="checkbox" className="checkbox" />
-                  </label>
+                  </label> */}
+                  {index + 1}
                 </th>
                 {/* <td>
                   <div className="flex items-center gap-3">
@@ -98,11 +114,21 @@ export default async function ProductsList() {
                 <td>{element.development}</td>
                 <td>{element.suggestion}</td>
                 {/* <td></td> */}
+
                 <th>
-                  <Link href={`/editProduct/${element._id}`}>
-                    <button className="btn btn-primary">Edit</button>
-                  </Link>
-                  <RemoveBtn id={element._id} />
+                  <div className="flex justify-center items-center">
+                    <Link href={`/editProduct/${element._id}`}>
+                      <Button
+                        variant="contained"
+                        color="success"
+                        className="mr-2"
+                        size="large"
+                      >
+                        <EditIcon />
+                      </Button>
+                    </Link>
+                    <RemoveBtn id={element._id} />
+                  </div>
                 </th>
               </tr>
             ))}
