@@ -378,13 +378,12 @@ export default function EditProductForm({
             Update Product
           </button> */}
           <Button
-      
             variant="contained"
             color="success"
             className="font-bold px-28 py-3 mt-5"
             size="large"
           >
-          Add Product
+            Add Product
           </Button>
         </div>
       </form>
